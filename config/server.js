@@ -3,9 +3,11 @@
 import express from "express"
 import cors from "cors"
 import helmet from "helmet"
-import morgan from "morgan"
+import morgan, { format } from "morgan"
 //Importar conexion del archivo de mongo
 import { dbConnection } from "./mongo.js"
+import limiter from "../src/middlewares/validar-cant-peticiones.js"
+import authRoutes from '../src/auth/auth.routers.js'
 
 
 const configurarMiddlewares= (app)=>{
@@ -14,11 +16,14 @@ const configurarMiddlewares= (app)=>{
     app.use(express.json()) // Para que JS entienda los JSON
     app.use(helmet()) // Es para la seguridad
     app.use(morgan('dev')) // Muestra mensajes para nuestras rutas (POST,PUT etc)
+    app.use(limiter) // Llamamos a nuestro middleware personalizado
 }
 
 //Configurar rutas
-const configurarRutas = ()=>{
+const configurarRutas = (app)=>{
+    const authPath = '/adoptionSystem/v1/auth'
 
+    app.use(authPath,authRoutes)
 }
 
 //Cuando nos conectemos
