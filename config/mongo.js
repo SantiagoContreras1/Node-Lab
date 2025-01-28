@@ -9,7 +9,7 @@ export const dbConnection = async()=>{
         //Metodos de escucha
         mongoose.connection.on('error',()=>{
             //Siempre se ejecuta el callback
-            console.log('MongoDB | No se pudo conectar a MOngoDB')
+            console.log('MongoDB | No se pudo conectar a MongoDB')
             mongoose.disconnect()
         })
 
@@ -18,7 +18,7 @@ export const dbConnection = async()=>{
         })
 
         mongoose.connection.on('connected',()=>{
-            console.log('MongoDB | Coectado a MongoDB')
+            console.log('MongoDB | Conectado a MongoDB')
         })
 
         //Cuando abre la DB
@@ -43,6 +43,6 @@ export const dbConnection = async()=>{
             maxPoolSize: 50, //Maximo de conexiones que se pueden tener
         })
     } catch (error) {
-        console.log('Database nonnection failed',error)
+        console.log('Database connection failed',error)
     }
 }
