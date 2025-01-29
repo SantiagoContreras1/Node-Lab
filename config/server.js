@@ -8,19 +8,21 @@ import morgan, { format } from "morgan"
 import { dbConnection } from "./mongo.js"
 import limiter from "../src/middlewares/validar-cant-peticiones.js"
 import authRoutes from '../src/auth/auth.routers.js'
+import middlewareWrapper from "cors"
+import router from "../src/auth/auth.routers.js"
 
 
-const configurarMiddlewares= (app)=>{
+const middlewares= (app)=>{
     app.use(express.urlencoded({extended: false})) // Para forms
-    app.use(cors()) // Dominios que nos pueden acceder
     app.use(express.json()) // Para que JS entienda los JSON
+    app.use(cors()) // Dominios que nos pueden acceder
     app.use(helmet()) // Es para la seguridad
     app.use(morgan('dev')) // Muestra mensajes para nuestras rutas (POST,PUT etc)
     app.use(limiter) // Llamamos a nuestro middleware personalizado
 }
 
 //Configurar rutas
-const configurarRutas = (app)=>{
+const routes = (app)=>{
     const authPath = '/adoptionSystem/v1/auth'
 
     app.use(authPath,authRoutes)
@@ -37,15 +39,17 @@ const conectarDB = async ()=>{
 }
 
 //Iniciar server
-export const iniciarServer= async ()=>{
+export const initServer= ()=>{
     const app = express() // Crea el servidor
     const port = process.env.PORT || 3000
 
-    await conectarDB()
-    configurarMiddlewares(app) // Se le manda al server
-    configurarRutas(app) //Se le manda al server
-
-    app.listen(port, ()=>{
+    try {
+        middlewares(app)
+        conectarDB()
+        routes(app)
+        app.listen(port)
         console.log(`Server running on port ${port}`)
-    })
+    } catch (err) {
+        console.log(`Server init failed ${err}`)
+    }
 }

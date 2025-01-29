@@ -1,21 +1,34 @@
-import mongoose from "mongoose";
+import timespan from "jsonwebtoken/lib/timespan"
+import { Schema,model } from "mongoose"
 
 // Definir schema (Antiguamente modelo)
-const UserSchema = mongoose.Schema({
+const UserSchema = Schema({
     // Se crea un objeto por cada dato
-    nombre:{
+    name:{
         type: String,
-        required: [true,'El campo es obligatorio'], // Crea un campo obligatorio
+        required: [true,'Name is required'], // Crea un campo obligatorio
+        maxLength: [25,'Name is too long, the limit is 25 characteres']
     },
-    correo:{
+    surenmae:{
         type: String,
+        required: [true,'Name is required'], // Crea un campo obligatorio
+        maxLength: [25,'Cant be overcome 25 characters']
+    },
+    username:{
+        type: String,
+        unique:true
+    },
+    mail:{
+        type: String,
+        required: [true,'Email is required'],
         unique: true
     },
     password:{
         type: String,
-        required: [true,'Este campo es obligatorio']
+        required: [true,'Este campo es obligatorio'],
+        minLength: 8
     },
-    img:{
+    profilePicture:{
         type: String // Es String pq se le pasa la direccion de la imagen
     },
     phone:{
@@ -39,7 +52,15 @@ const UserSchema = mongoose.Schema({
         type: Boolean,
         default: false
     }
-})
+},
+
+//No lo agregue a la DB
+{
+    timestamps:true, // Agregar el createAt y updateAt
+    versionKey:false //No agrega el campo __v
+}
+
+)
 
 // Similar al ToString
 UserSchema.methods.toJSON= function(){
@@ -49,4 +70,4 @@ UserSchema.methods.toJSON= function(){
 }
 
 // Exportacion por default
-export default mongoose.model('User',UserSchema)
+export default model('User',UserSchema)
