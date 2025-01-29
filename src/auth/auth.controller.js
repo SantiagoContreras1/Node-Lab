@@ -2,7 +2,7 @@ import bcryptjs from "bcryptjs";
 import Usuario from '../users/user.model.js'
 import {generarJWT} from '../helpers/generate-jwt.js'
 
-export const login= async()=>{
+export const login= async(req,res)=>{
     const {correo,password} = req.body
 
     try {
@@ -11,7 +11,7 @@ export const login= async()=>{
 
         // *****VALIDACIONES***********
         if (!user) {
-            return req.status(400).json({
+            return res.status(400).json({
                 msg: 'Credenciales incorrectas, el correo no esta registrado'
             })
         }
@@ -53,9 +53,10 @@ export const login= async()=>{
 
 }
 
-export const register = async()=>{
+export const register = async(req,res)=>{
 
     const {nombre,correo,password,rol,phone} = req.body
+    console.log(req.body)
     const user = new Usuario({nombre,correo,password,rol,phone})
 
     // Encriptar la contraseña
@@ -64,7 +65,7 @@ export const register = async()=>{
 
     await user.save()
 
-    req.status(200).json({
+    res.status(200).json({
         user
     })
 }

@@ -43,7 +43,7 @@ const UserSchema = mongoose.Schema({
 
 // Similar al ToString
 UserSchema.methods.toJSON= function(){
-    const {__v,password,_id,___usuario} = this.object() // todos los que no se usan
+    const {__v,password,_id,...usuario} = this.toObject() // todos los que no se usan
     usuario.uid = _id
     return usuario
 }
