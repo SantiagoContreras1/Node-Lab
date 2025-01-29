@@ -7,11 +7,12 @@ import { existentEmail,isValidRol } from "../helpers/db-validator.js";
 
 const router = Router()
 
-router.post(// Se le manda el path de direccion en donde va a estar alojadp
+router.post(// Se le manda el path de direccion en donde va a estar alojado
     '/login',
     [
         check('correo','Este no es un correo válido').isEmail(),
         check('password','La contraseña es obligatoria').not().isEmpty(),
+        validarCampos
 
     ]
     ,login // Controller

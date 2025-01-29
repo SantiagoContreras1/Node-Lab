@@ -12,7 +12,7 @@ export const generarJWT = (uid=' ')=>{ // Devuelve una promesa
             {
                 expiresIn: '1h'
             },
-            (arr,token)=>{ // Callback
+            (err,token)=>{ // Callback
                 err ? (console.log(err),reject('No se pudo generar el token')) : (resolve(token))
             }
         )
