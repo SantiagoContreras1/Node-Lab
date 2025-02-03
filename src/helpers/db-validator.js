@@ -11,6 +11,7 @@ export const isValidRol = async(rol='')=>{
 
 
 export const existentEmail=async(correo='')=>{
+    console.log('flag')
     const existenteEmail = await Usuario.findOne({correo})
 
     if (existenteEmail) {
