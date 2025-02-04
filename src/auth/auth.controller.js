@@ -3,7 +3,6 @@ import { hash,verify } from "argon2";
 import {generarJWT} from '../helpers/generate-jwt.js'
 
 export const login= async(req,res)=>{
-    console.log('Luis')
     const {email,password,username} = req.body
 
     try {
@@ -31,7 +30,6 @@ export const login= async(req,res)=>{
         
         //BCrypt Permite comparar passwords
         const validPass = await verify(user.password,password)
-        console.log('Manuel')
         if (!validPass) {
             return res.status(400).json({
                 msg: 'La contraseña es incorrecta'
@@ -42,10 +40,8 @@ export const login= async(req,res)=>{
 
 
 
-        console.log('FLAG')
         const token = await generarJWT(user.id)
-        console.log('Despues')
-        res.status(200).json({
+        return res.status(200).json({
             msg: 'Usuario Correcto',
             userDetails:{
                 username: user.username,
@@ -54,11 +50,14 @@ export const login= async(req,res)=>{
             }
         })
 
-    } catch (e) {
+    } catch (e) { 
+
         console.log(e)
-        res.status(500).json({
+        
+        return res.status(500).json({
             message: 'Comuniquese con su admin',
-            error: e.message
+            error: e.message, // Devuelve el mensaje de error
+            stack: e.stack    // Devuelve el stack trace para más detalles
         })
     }
 
@@ -78,7 +77,7 @@ export const register = async(req,res)=>{
             username: data.username,
             email: data.email,
             phone: data.phone,
-            password: data.password,
+            password: encryptedPassword,
             rol: data.rol,
             profilePicture
         })

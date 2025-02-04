@@ -10,6 +10,7 @@ const router = Router()
 router.post(// Se le manda el path de direccion en donde va a estar alojado
     '/login',
     loginValidator,
+    deleteFileOnError,
     login // Controller
 ) 
 
