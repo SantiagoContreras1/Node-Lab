@@ -1,5 +1,5 @@
 import Rol from "../rol/rol.model.js";
-import Usuario from "../users/user.model.js";
+
 
 export const isValidRol = async(rol='')=>{
     const existenteRol = await Rol.findOne({rol})
@@ -15,5 +15,13 @@ export const existentEmail=async(correo='')=>{
 
     if (existenteEmail) {
         throw new Error(`El mail ${correo} ya existe`)
+    }
+}
+
+export const existentUserById = async (id=" ") => {
+    const userExist = await Usuario.findById(id)
+    console.log('FLAGGG')
+    if (!userExist) {
+        throw new Error(`El ID ${id} no existe`)
     }
 }
