@@ -14,7 +14,6 @@ export const getUsers = async (req= request, res=response) => {
                 .skip(Number(desde))
                 .limit(Number(limite))
         ])
-        console.log('FLAG2')
 
         res.status(200).json({
             succes:true,
@@ -40,7 +39,7 @@ export const getUserById = async (req,res) => {
         if (!user) {
             return res.status(404).json({
                 succes: false,
-                msg: "User not found"
+                msg: "User not found :c"
             })
         }
 
@@ -59,17 +58,17 @@ export const getUserById = async (req,res) => {
     }
 }
 
-export const updateUser = async (res,req = response) => {
+export const updateUser = async (req,res = response) => { 
     
     try {
         const {id}= req.params //lo que le ingresamos a la direccion
         const {_id,password,email,...data} = req.body
 
         if(password){
-            data.password = await hash(password)
+            data.password = await hash(password) // Encripta la password
         }
         
-        const user = await User.findByIdAndUpdate(id,data,{new:true})
+        const user = await User.findByIdAndUpdate(id,data,{new:true}) // Actualizacion
 
         res.status(200).json({
             succes: true,
@@ -78,7 +77,7 @@ export const updateUser = async (res,req = response) => {
         })
         
     } catch (error) {
-        res.response(500).json({
+        res.status(500).json({
             succes: false,
             msg: "Error al actualizar usuario",
             error

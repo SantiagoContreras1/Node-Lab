@@ -22,9 +22,7 @@ const middlewares= (app)=>{
 
 //Configurar rutas
 const routes = (app)=>{
-    const authPath = '/adoptionSystem/v1/auth'
-
-    app.use(authPath,authRoutes)
+    app.use("/adoptionSystem/v1/auth",authRoutes)
     app.use("/adoptionSystem/v1/users",userRouters)
 }
 

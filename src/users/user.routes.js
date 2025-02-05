@@ -12,17 +12,17 @@ const router = Router()
 router.get("/",getUsers)
 
 router.get(
-    "/findUser/:id", // Se le manda el parametro
+    "/findUser/:id", // Se le manda el parametro, el id del user
     [
         check("id", "Invalid id").isMongoId(), // valida el id para mongo
-        check("id").custom(existentUserById),
+        check("id").custom(existentUserById), // helper
         validarCampos
     ],
     getUserById
 )
 
 router.put(
-    '/update/:id',
+    '/:id', // Path
     uploadProfilePricture.single('profilePicture'),
     [
         check("id", "Invalid id").isMongoId(), // valida el id para mongo

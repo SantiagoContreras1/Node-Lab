@@ -6,9 +6,8 @@ export const login= async(req,res)=>{
     const {email,password,username} = req.body
 
     try {
-
         const user = await Usuario.findOne({
-            $or: [{email: lowerEmail},{username: lowerUsername}]
+            $or: [{email},{username}]
         })
 
 
@@ -61,13 +60,13 @@ export const login= async(req,res)=>{
 }
 
 export const register = async(req,res)=>{
-
+    
     try {
         const data = req.body // Accede a la data del body
         let profilePicture = req.file ? req.file.filename :null // Traer la imagen
 
         const encryptedPassword = await hash(data.password)
-
+        
         const user = await Usuario.create({
             name: data.name,
             surname: data.surname,
