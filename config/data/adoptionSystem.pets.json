@@ -1,0 +1,57 @@
+[{
+  "_id": {
+    "$oid": "67a4473591747dda06cc6a39"
+  },
+  "name": "Pig",
+  "description": "pug",
+  "age": 32,
+  "type": "PERRITO",
+  "keeper": {
+    "$oid": "67a4437659262243b47d52c4"
+  },
+  "status": false,
+  "createdAt": {
+    "$date": "2025-02-06T05:23:01.641Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-06T05:58:00.223Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67a44c4ef03b94a37939b69f"
+  },
+  "name": "Nappy",
+  "description": "Doberman",
+  "age": 32,
+  "type": "PERRITO",
+  "keeper": {
+    "$oid": "67a4437659262243b47d52c4"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-06T05:44:46.789Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-06T05:44:46.789Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67a44f9c91c1bb48c983bad9"
+  },
+  "name": "Dug",
+  "description": "Golden",
+  "age": 32,
+  "type": "EL PERRITO DE UP",
+  "keeper": {
+    "$oid": "67a4437659262243b47d52c4"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-06T05:58:52.146Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-06T05:58:52.146Z"
+  }
+}]
