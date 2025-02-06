@@ -3,14 +3,13 @@
 import express from "express"
 import cors from "cors"
 import helmet from "helmet"
-import morgan, { format } from "morgan"
+import morgan from "morgan"
 //Importar conexion del archivo de mongo
 import { dbConnection } from "./mongo.js"
 import limiter from "../src/middlewares/validar-cant-peticiones.js"
 import authRoutes from '../src/auth/auth.routers.js'
-import middlewareWrapper from "cors"
-import router from "../src/auth/auth.routers.js"
-
+import userRouters from "../src/users/user.routes.js"
+import petRoutes from "../src/pets/pet.routes.js"
 
 const middlewares= (app)=>{
     app.use(express.urlencoded({extended: false})) // Para forms
@@ -23,9 +22,9 @@ const middlewares= (app)=>{
 
 //Configurar rutas
 const routes = (app)=>{
-    const authPath = '/adoptionSystem/v1/auth'
-
-    app.use(authPath,authRoutes)
+    app.use("/adoptionSystem/v1/auth",authRoutes)
+    app.use("/adoptionSystem/v1/users",userRouters)
+    app.use("/adoptionSystem/v1/pets",petRoutes)
 }
 
 //Cuando nos conectemos
@@ -44,6 +43,7 @@ export const initServer= ()=>{
     const port = process.env.PORT || 3000
 
     try {
+        
         middlewares(app)
         conectarDB()
         routes(app)

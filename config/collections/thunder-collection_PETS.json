@@ -1,0 +1,79 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "PETS",
+    "collectionId": "2b723b83-14ff-4fa7-98c4-584a1df165f7",
+    "dateExported": "2025-02-06T06:24:05.362Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "2f8956e1-1aeb-4ccd-9194-f0902b045041",
+            "colId": "2b723b83-14ff-4fa7-98c4-584a1df165f7",
+            "containerId": "",
+            "name": "POST",
+            "url": "http://localhost:3000/adoptionSystem/v1/pets/",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2025-02-05T19:55:33.760Z",
+            "modified": "2025-02-06T05:58:52.179Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2E0NDM3NjU5MjYyMjQzYjQ3ZDUyYzQiLCJpYXQiOjE3Mzg4MTg0ODAsImV4cCI6MTczODgyMjA4MH0.20VZOJ5-YAswY9NQLBRsN0ZQMuiwPTGjzWCUDE14xbc"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"Dug\",\n  \"description\":\"Golden\",\n  \"age\":32,\n  \"type\":\"El perrito de up\",\n  \"email\":\"postmalone@gmail.com\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "d2dd47f8-78ab-4b6f-9a7c-ca59219074bf",
+            "colId": "2b723b83-14ff-4fa7-98c4-584a1df165f7",
+            "containerId": "",
+            "name": "GET",
+            "url": "http://localhost:3000/adoptionSystem/v1/pets/",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2025-02-05T20:45:29.402Z",
+            "modified": "2025-02-05T20:45:42.364Z",
+            "headers": []
+        },
+        {
+            "_id": "fe6f7fae-c858-4cd4-a7ca-2250f8ad32be",
+            "colId": "2b723b83-14ff-4fa7-98c4-584a1df165f7",
+            "containerId": "",
+            "name": "GET by ID",
+            "url": "http://localhost:3000/adoptionSystem/v1/pets/",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2025-02-05T21:35:22.102Z",
+            "modified": "2025-02-06T05:23:39.354Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "67a4473591747dda06cc6a39.eyJ1aWQiOiI2N2EzZTJjOGIzMDEwODA2OTQzNDhlMjQiLCJpYXQiOjE3Mzg3OTU3MzMsImV4cCI6MTczODc5OTMzM30.iAdxxFrfnU6BwMLrHk1KcDutk5Q_zTdJEOWB4VclOFE"
+                }
+            ]
+        },
+        {
+            "_id": "3f34d7ca-126e-40a9-8515-f9c4c2a659fb",
+            "colId": "2b723b83-14ff-4fa7-98c4-584a1df165f7",
+            "containerId": "",
+            "name": "DELETE",
+            "url": "http://localhost:3000/adoptionSystem/v1/pets/67a4473591747dda06cc6a39",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2025-02-06T05:44:28.385Z",
+            "modified": "2025-02-06T05:58:00.251Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2E0NDM3NjU5MjYyMjQzYjQ3ZDUyYzQiLCJpYXQiOjE3Mzg4MjExODEsImV4cCI6MTczODgyNDc4MX0.hdrmM01V-9C2iRrar9_MKaHhsuirW0LDByeoE39Sjh4"
+                }
+            ]
+        }
+    ],
+    "ref": "lMSQxX3eORDnFooAtW97E50RtQlMzPl_tJQpaFYBQHF3An-a9Kr2pY7-skRlEGxWVwH0oPktlJNL32gPDTx5Bg"
+}

@@ -1,13 +1,14 @@
-import bcryptjs from "bcryptjs";
 import Usuario from '../users/user.model.js'
+import { hash,verify } from "argon2";
 import {generarJWT} from '../helpers/generate-jwt.js'
 
 export const login= async(req,res)=>{
-    console.log('Luis')
-    const {correo,password} = req.body
+    const {email,password,username} = req.body
 
     try {
-        const user = await Usuario.findOne({correo})
+        const user = await Usuario.findOne({
+            $or: [{email},{username}]
+        })
 
 
         // *****VALIDACIONES***********
@@ -24,8 +25,7 @@ export const login= async(req,res)=>{
         }
         
         //BCrypt Permite comparar passwords
-        const validPass = bcryptjs.compareSync(password, user.password)
-        console.log('Manuel')
+        const validPass = await verify(user.password,password)
         if (!validPass) {
             return res.status(400).json({
                 msg: 'La contraseña es incorrecta'
@@ -36,37 +36,61 @@ export const login= async(req,res)=>{
 
 
 
-        console.log('Antes')
         const token = await generarJWT(user.id)
-        console.log('Despues')
-        res.status(200).json({
+        return res.status(200).json({
             msg: 'Usuario Correcto',
-            user,
-            token
+            userDetails:{
+                username: user.username,
+                token: token,
+                profilePicture: user.profilePicture
+            }
         })
 
-    } catch (e) {
+    } catch (e) { 
+
         console.log(e)
-        res.status(500).json({
-            msg: 'Comuniquese con su admin'
+        
+        return res.status(500).json({
+            message: 'Comuniquese con su admin',
+            error: e.message, // Devuelve el mensaje de error
+            stack: e.stack    // Devuelve el stack trace para más detalles
         })
     }
 
 }
 
 export const register = async(req,res)=>{
+    
+    try {
+        const data = req.body // Accede a la data del body
+        let profilePicture = req.file ? req.file.filename :null // Traer la imagen
 
-    const {nombre,correo,password,rol,phone} = req.body
-    console.log(req.body)
-    const user = new Usuario({nombre,correo,password,rol,phone})
+        const encryptedPassword = await hash(data.password)
+        
+        const user = await Usuario.create({
+            name: data.name,
+            surname: data.surname,
+            username: data.username,
+            email: data.email,
+            phone: data.phone,
+            password: encryptedPassword,
+            rol: data.rol,
+            profilePicture
+        })
 
-    // Encriptar la contraseña
-    const salt = bcryptjs.genSaltSync() // Tipo de encrypt
-    user.password = bcryptjs.hashSync(password,salt)
+        return res.status(200).json({
+            message: "User recibed",
+            userDetails:{
+                user: user.email
+            }
+        })
 
-    await user.save()
 
-    res.status(200).json({
-        user
-    })
+    } catch (error) {
+        console.log(error)
+        return res.status(400).json({
+            message: "User registration failed",
+            error: error.message
+        })
+    }
 }

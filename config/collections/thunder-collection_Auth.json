@@ -1,0 +1,45 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Auth",
+    "collectionId": "7e22d59b-dd30-46e1-ac99-fc202b70cf18",
+    "dateExported": "2025-02-06T06:23:36.153Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "9838312a-f31a-45d3-b6ed-76a8b79197ea",
+            "colId": "7e22d59b-dd30-46e1-ac99-fc202b70cf18",
+            "containerId": "",
+            "name": "Register",
+            "url": "http://localhost:3000/adoptionSystem/v1/auth/register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2025-01-29T19:05:22.232Z",
+            "modified": "2025-02-06T03:48:39.071Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Quavo\",\n  \"surname\": \"Valentin\",\n  \"username\":\"Migos\",\n  \"email\": \"postmalone@gmail.com\",\n  \"password\": \"123456789\",\n  \"phone\":\"66669999\",\n  \"rol\":\"ADMIN_ROL\"\n}\n",
+                "form": []
+            }
+        },
+        {
+            "_id": "1539ffea-13a4-4fc0-8a19-40c5e0746501",
+            "colId": "7e22d59b-dd30-46e1-ac99-fc202b70cf18",
+            "containerId": "",
+            "name": "Loginn",
+            "url": "http://localhost:3000/adoptionSystem/v1/auth/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2025-02-05T03:42:41.721Z",
+            "modified": "2025-02-06T05:08:00.168Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"postmalone@gmail.com\",\n  \"password\": \"123456789\",\n  \"username\":\"Migos\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "4FyBl6zAoxjPcoubK9OFN0rJudNJ5hXv0sUy25AcKeAXLDY4aLtnbEsZO19xXxqvf2dGcaelK0SY9MPXuYNkQg"
+}
