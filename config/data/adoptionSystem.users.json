@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "67a4437659262243b47d52c4"
+  },
+  "name": "Quavo",
+  "surname": "Valentin",
+  "username": "Migos",
+  "email": "postmalone@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$Zc7uYY+9EBEd0oLLzISPkw$N7REZpKWmCVT6chx+v/gXwZLfInqXGW5Mk1eTpjgkGk",
+  "profilePicture": null,
+  "phone": "66669999",
+  "rol": "ADMIN_ROL",
+  "estado": true,
+  "google": false,
+  "createdAt": {
+    "$date": "2025-02-06T05:07:02.213Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-06T05:07:02.213Z"
+  }
+}]

@@ -1,0 +1,64 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "CRUD",
+    "collectionId": "b76cf7d5-a372-4372-b5d8-c7c0e1be876b",
+    "dateExported": "2025-02-06T06:23:53.675Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "591d1973-5f76-478b-a53d-349e8e76fdf4",
+            "colId": "b76cf7d5-a372-4372-b5d8-c7c0e1be876b",
+            "containerId": "",
+            "name": "Get",
+            "url": "http://localhost:3000/adoptionSystem/v1/users/",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2025-02-05T03:42:55.921Z",
+            "modified": "2025-02-05T05:36:54.634Z",
+            "headers": []
+        },
+        {
+            "_id": "9e267d7c-e071-4191-841e-edd03e9a3cb9",
+            "colId": "b76cf7d5-a372-4372-b5d8-c7c0e1be876b",
+            "containerId": "",
+            "name": "Get By ID",
+            "url": "http://localhost:3000/adoptionSystem/v1/users/findUser/67a3b875631dacaa93d8df60",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2025-02-05T05:36:11.082Z",
+            "modified": "2025-02-05T19:15:33.439Z",
+            "headers": []
+        },
+        {
+            "_id": "541a0734-1d47-4c77-b527-71fb7f231c8a",
+            "colId": "b76cf7d5-a372-4372-b5d8-c7c0e1be876b",
+            "containerId": "",
+            "name": "Update",
+            "url": "http://localhost:3000/adoptionSystem/v1/users/67a2fa2346572fdc0b6e595b",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2025-02-05T05:56:33.092Z",
+            "modified": "2025-02-05T19:16:30.950Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Eduardo\",\n  \"surname\": \"De Leon Plato\",\n  \"username\":\"Yuvalllll\",\n  \"email\": \"luisdeplato@gmail.com\",\n  \"password\": \"123456789\",\n  \"phone\":\"66669999\",\n  \"rol\":\"USER_ROL\"\n}\n",
+                "form": []
+            }
+        },
+        {
+            "_id": "9dd1ae88-bd5e-4812-bd78-e9d989244c32",
+            "colId": "b76cf7d5-a372-4372-b5d8-c7c0e1be876b",
+            "containerId": "",
+            "name": "DELETE",
+            "url": "http://localhost:3000/adoptionSystem/v1/users/67a2fa2346572fdc0b6e595b",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2025-02-05T19:09:03.310Z",
+            "modified": "2025-02-05T19:10:33.607Z",
+            "headers": []
+        }
+    ],
+    "ref": "7z6I8OSYMWSTwHnYeEtILjKXPVVAq6AKea8o4FDXJ3_wRxJLQTx1K3_wvAa8EggItlXbhUIVTq-2CyDtBFd7wA"
+}
