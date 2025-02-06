@@ -1,4 +1,3 @@
-import timespan from "jsonwebtoken/lib/timespan"
 import { Schema,model } from "mongoose"
 
 // Definir schema (Antiguamente modelo)
@@ -9,7 +8,7 @@ const UserSchema = Schema({
         required: [true,'Name is required'], // Crea un campo obligatorio
         maxLength: [25,'Name is too long, the limit is 25 characteres']
     },
-    surenmae:{
+    surname:{
         type: String,
         required: [true,'Name is required'], // Crea un campo obligatorio
         maxLength: [25,'Cant be overcome 25 characters']
@@ -18,7 +17,7 @@ const UserSchema = Schema({
         type: String,
         unique:true
     },
-    mail:{
+    email:{
         type: String,
         required: [true,'Email is required'],
         unique: true
@@ -41,7 +40,7 @@ const UserSchema = Schema({
     rol:{
         type: String,
         required: true,
-        enum: ['ADMIN_ROLE','USER_ROLE']
+        enum: ['ADMIN_ROL','USER_ROL']
     },
     estado:{
         type: Boolean,
