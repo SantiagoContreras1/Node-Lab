@@ -127,3 +127,26 @@ export const deletePet = async (req, res) => {
     }
 
 }
+
+export const updatePet = async (req,res) => {
+    try {
+        const {id} = req.params // ID de la mascota en la url
+        const {...data} = req.body
+
+        const pet = await Pet.findByIdAndUpdate(id,data,{new:true})
+
+        req.status(200).json({
+            succes: true,
+            msg:'Pet editada exitosamente!',
+            pet
+        })
+
+
+    } catch (error) {
+        res.status(500).json({
+            succes: false,
+            msg: "Error al actualizar usuario",
+            error
+        })
+    }
+}

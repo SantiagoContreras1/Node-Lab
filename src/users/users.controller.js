@@ -1,6 +1,6 @@
 import { response,request } from "express";
 import { hash } from "argon2";
-import User from "./user.model.js"
+import User from "./user.model.js";
 
 export const getUsers = async (req= request, res=response) => {
     try {
@@ -62,7 +62,7 @@ export const updateUser = async (req,res = response) => {
     
     try {
         const {id}= req.params //lo que le ingresamos a la direccion
-        const {_id,password,email,...data} = req.body
+        const {_id,password,email,...data} = req.body // Excluir campos que no deben ser editados
 
         if(password){
             data.password = await hash(password) // Encripta la password
@@ -80,6 +80,33 @@ export const updateUser = async (req,res = response) => {
         res.status(500).json({
             succes: false,
             msg: "Error al actualizar usuario",
+            error
+        })
+    }
+}
+
+export const updatePass = async (req,res) => {
+    try {
+        const {id}= req.params //lo que le ingresamos a la direccion
+        const {_id,email,...data} = req.body // Excluir campos que no deben ser editados
+
+        if(password){
+            data.password = await hash(password) // Encripta la password
+        }
+
+        const user = await User.findByIdAndUpdate(id,data,{new:true}) // Actualizacion
+
+        res.status(200).json({
+            succes: true,
+            msg:'Contraseña editada exitosamente!',
+            user
+        })
+        
+        
+    } catch (error) {
+        res.status(500).json({
+            succes: false,
+            msg: "Error al actualizar contraseña",
             error
         })
     }
