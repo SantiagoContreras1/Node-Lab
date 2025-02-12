@@ -1,57 +1,38 @@
 [{
   "_id": {
-    "$oid": "67a4473591747dda06cc6a39"
+    "$oid": "67ac2aa33f3919b46d5cdeec"
   },
-  "name": "Pig",
-  "description": "pug",
+  "name": "2Chainz",
+  "description": "Perrito mediano",
   "age": 32,
-  "type": "PERRITO",
+  "type": "GOLDEN",
   "keeper": {
-    "$oid": "67a4437659262243b47d52c4"
+    "$oid": "67ac26e23f3919b46d5cdee5"
   },
-  "status": false,
+  "status": true,
   "createdAt": {
-    "$date": "2025-02-06T05:23:01.641Z"
+    "$date": "2025-02-12T04:59:15.831Z"
   },
   "updatedAt": {
-    "$date": "2025-02-06T05:58:00.223Z"
+    "$date": "2025-02-12T04:59:15.831Z"
   }
 },
 {
   "_id": {
-    "$oid": "67a44c4ef03b94a37939b69f"
+    "$oid": "67ac2b8a3f3919b46d5cdefb"
   },
-  "name": "Nappy",
-  "description": "Doberman",
+  "name": "lil Jon",
+  "description": "Perrito enano",
   "age": 32,
-  "type": "PERRITO",
+  "type": "CHIHUAHUA",
   "keeper": {
-    "$oid": "67a4437659262243b47d52c4"
+    "$oid": "67ac2b3d3f3919b46d5cdef6"
   },
   "status": true,
   "createdAt": {
-    "$date": "2025-02-06T05:44:46.789Z"
+    "$date": "2025-02-12T05:03:06.946Z"
   },
   "updatedAt": {
-    "$date": "2025-02-06T05:44:46.789Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67a44f9c91c1bb48c983bad9"
-  },
-  "name": "Dug",
-  "description": "Golden",
-  "age": 32,
-  "type": "EL PERRITO DE UP",
-  "keeper": {
-    "$oid": "67a4437659262243b47d52c4"
-  },
-  "status": true,
-  "createdAt": {
-    "$date": "2025-02-06T05:58:52.146Z"
-  },
-  "updatedAt": {
-    "$date": "2025-02-06T05:58:52.146Z"
+    "$date": "2025-02-12T05:03:06.946Z"
   }
 }]

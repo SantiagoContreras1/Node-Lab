@@ -10,6 +10,7 @@ import limiter from "../src/middlewares/validar-cant-peticiones.js"
 import authRoutes from '../src/auth/auth.routers.js'
 import userRouters from "../src/users/user.routes.js"
 import petRoutes from "../src/pets/pet.routes.js"
+import dateRoutes from "../src/dates/dates.routes.js"
 
 const middlewares= (app)=>{
     app.use(express.urlencoded({extended: false})) // Para forms
@@ -25,6 +26,7 @@ const routes = (app)=>{
     app.use("/adoptionSystem/v1/auth",authRoutes)
     app.use("/adoptionSystem/v1/users",userRouters)
     app.use("/adoptionSystem/v1/pets",petRoutes)
+    app.use("/adoptionSystem/v1/dates",dateRoutes)
 }
 
 //Cuando nos conectemos

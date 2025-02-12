@@ -1,0 +1,34 @@
+[{
+  "_id": {
+    "$oid": "67ac2af73f3919b46d5cdef0"
+  },
+  "date": {
+    "$date": "2025-02-15T00:00:00.000Z"
+  },
+  "description": "Consulta médica programada",
+  "email": "vicente@gmail.com",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-12T05:00:39.721Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-12T05:00:39.721Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ac2bea3f3919b46d5cdeff"
+  },
+  "date": {
+    "$date": "2025-02-25T00:00:00.000Z"
+  },
+  "description": "Grooming programado",
+  "email": "mayen@gmail.com",
+  "status": false,
+  "createdAt": {
+    "$date": "2025-02-12T05:04:42.265Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-12T05:07:26.413Z"
+  }
+}]

@@ -1,21 +1,42 @@
 [{
   "_id": {
-    "$oid": "67a4437659262243b47d52c4"
+    "$oid": "67ac26e23f3919b46d5cdee5"
   },
-  "name": "Quavo",
-  "surname": "Valentin",
-  "username": "Migos",
-  "email": "postmalone@gmail.com",
-  "password": "$argon2id$v=19$m=65536,t=3,p=4$Zc7uYY+9EBEd0oLLzISPkw$N7REZpKWmCVT6chx+v/gXwZLfInqXGW5Mk1eTpjgkGk",
+  "name": "Vicente",
+  "surname": "Fernandez",
+  "username": "vice",
+  "email": "vicente@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$tne4sptmDSlWbPRBBy3+LA$4nTcgGBTP7QjjTGr/PQ8TyG1FkjP7dVd/ZpF65AFpnE",
   "profilePicture": null,
   "phone": "66669999",
   "rol": "ADMIN_ROL",
   "estado": true,
   "google": false,
   "createdAt": {
-    "$date": "2025-02-06T05:07:02.213Z"
+    "$date": "2025-02-12T04:43:14.282Z"
   },
   "updatedAt": {
-    "$date": "2025-02-06T05:07:02.213Z"
+    "$date": "2025-02-12T04:43:14.282Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ac2b3d3f3919b46d5cdef6"
+  },
+  "name": "Alexander",
+  "surname": "Mayen",
+  "username": "mayen",
+  "email": "mayen@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$C7BO0N2S5v9i0JCMkIM2wQ$lrwXK7i0IZmjX4LBPJD8QE2x3kfMsPYFgFQgFxTdM/w",
+  "profilePicture": null,
+  "phone": "66669999",
+  "rol": "ADMIN_ROL",
+  "estado": true,
+  "google": false,
+  "createdAt": {
+    "$date": "2025-02-12T05:01:49.039Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-12T05:01:49.039Z"
   }
 }]

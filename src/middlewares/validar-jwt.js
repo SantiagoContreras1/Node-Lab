@@ -1,5 +1,5 @@
-import jwt from 'jsonwebtoken'
-import Usuario from "../users/user.model.js"
+import jwt from 'jsonwebtoken';
+import Usuario from "../users/user.model.js";
 
 // El next define que es un middleware
 export const validarJWT = async(req,res,next)=>{ // req: Peticion al server CRUD. Respones: Lo que nos responde el server
@@ -12,6 +12,7 @@ export const validarJWT = async(req,res,next)=>{ // req: Peticion al server CRUD
     }
 
     try {
+
         const {uid}= jwt.verify(token, process.env.SECRETPRIVATYKEY) // Verificamos nuestro token, Nuestra firma del .env
 
         const usuario = await Usuario.findById(uid)
