@@ -1,13 +1,12 @@
 import { response,request } from "express";
 import { hash } from "argon2";
-import User from "./user.model.js";
+import User from "./user.model.js";
 
 export const getUsers = async (req= request, res=response) => {
     try {
         const {limite =10,desde=0}=req.query
         const query= {estado:true}  //Ver el estado sea true, solo de desactivan users, no se eliminan 
 
-        console.log('FLAG1')
         const [total,users] = await Promise.all([
             User.countDocuments(query),
             User.find(query)
@@ -50,7 +49,7 @@ export const getUserById = async (req,res) => {
 
         
     } catch (error) {
-        res.response(500).json({
+        res.status(500).json({
             succes: false,
             msg: "Error al obtener usuario",
             error
@@ -86,15 +85,36 @@ export const updateUser = async (req,res = response) => {
 }
 
 export const updatePass = async (req,res) => {
+    console.log('FLAG 2');
+    console.log('ID recibido:', req.params.id);
+    console.log('Body recibido:', req.body);
     try {
-        const {id}= req.params //lo que le ingresamos a la direccion
-        const {_id,email,...data} = req.body // Excluir campos que no deben ser editados
+        
+        const {id}= req.params // ID del usuario
+        const {password} = req.body // Extrae el password
 
-        if(password){
-            data.password = await hash(password) // Encripta la password
+        if(!password){
+            return res.status(400).json({
+                succes: false,
+                msg: "Password is required"
+            });
+            
         }
 
-        const user = await User.findByIdAndUpdate(id,data,{new:true}) // Actualizacion
+        const hashedPassword = await hash(password)
+        
+        const user = await User.findByIdAndUpdate(
+            id,
+            {password: hashedPassword},
+            {new:true} // Retorna el usuario actualizado
+        )
+
+        if (!user) {
+            return res.status(404).json({
+                succes: false,
+                msg: "User not found :C"
+            });
+        }
 
         res.status(200).json({
             succes: true,
@@ -104,10 +124,11 @@ export const updatePass = async (req,res) => {
         
         
     } catch (error) {
+        console.error("Error en updatePass:", error); // Imprimir el error en consola
         res.status(500).json({
             succes: false,
             msg: "Error al actualizar contraseña",
-            error
+            error: error.message
         })
     }
 }

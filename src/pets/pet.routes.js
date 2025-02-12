@@ -29,7 +29,7 @@ router.get(
 )
 
 router.put(
-    "/:id",
+    "update/:id",
     [
         validarJWT,
         check("id", "No es un ID válido").isMongoId(),

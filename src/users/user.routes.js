@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { check } from "express-validator";
+import { check } from "express-validator";
 import {getUsers,getUserById,updateUser, updatePass} from "./users.controller.js"
 import {existentUserById} from "../helpers/db-validator.js"
 import { validarCampos } from "../middlewares/validar-campos.js"; 
@@ -33,7 +33,7 @@ router.put(
 )
 
 router.put(
-    'updatePassword/:id', // Path
+    '/updatePassword/:id', // Path
     [
         check("id", "Invalid id").isMongoId(), // valida el id para mongo
         check("id").custom(existentUserById),

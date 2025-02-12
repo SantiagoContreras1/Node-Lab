@@ -111,7 +111,7 @@ export const deletePet = async (req, res) => {
 
     try {
         
-        await Pet.findByIdAndUpdate(id, { status: false}); //Se desactiva el registro, no se elimia
+        await Pet.findByIdAndUpdate(id, { status: false},{new:true}); //Se desactiva el registro, no se elimia
 
         res.status(200).json({
             success: true,

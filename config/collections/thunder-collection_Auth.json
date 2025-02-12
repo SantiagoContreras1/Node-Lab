@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "Auth",
     "collectionId": "7e22d59b-dd30-46e1-ac99-fc202b70cf18",
-    "dateExported": "2025-02-06T06:23:36.153Z",
+    "dateExported": "2025-02-12T05:16:01.674Z",
     "version": "1.2",
     "folders": [],
     "requests": [
@@ -15,11 +15,11 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2025-01-29T19:05:22.232Z",
-            "modified": "2025-02-06T03:48:39.071Z",
+            "modified": "2025-02-12T05:01:49.052Z",
             "headers": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"name\": \"Quavo\",\n  \"surname\": \"Valentin\",\n  \"username\":\"Migos\",\n  \"email\": \"postmalone@gmail.com\",\n  \"password\": \"123456789\",\n  \"phone\":\"66669999\",\n  \"rol\":\"ADMIN_ROL\"\n}\n",
+                "raw": "{\n  \"name\": \"Alexander\",\n  \"surname\": \"Mayen\",\n  \"username\":\"mayen\",\n  \"email\": \"mayen@gmail.com\",\n  \"password\": \"123456789\",\n  \"phone\":\"66669999\",\n  \"rol\":\"ADMIN_ROL\"\n}\n",
                 "form": []
             }
         },
@@ -32,14 +32,14 @@
             "method": "POST",
             "sortNum": 20000,
             "created": "2025-02-05T03:42:41.721Z",
-            "modified": "2025-02-06T05:08:00.168Z",
+            "modified": "2025-02-12T05:02:05.784Z",
             "headers": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"email\": \"postmalone@gmail.com\",\n  \"password\": \"123456789\",\n  \"username\":\"Migos\"\n}",
+                "raw": "{\n  \"email\": \"mayen@gmail.com\",\n  \"password\": \"123456789\",\n  \"username\":\"mayen\"\n}",
                 "form": []
             }
         }
     ],
-    "ref": "4FyBl6zAoxjPcoubK9OFN0rJudNJ5hXv0sUy25AcKeAXLDY4aLtnbEsZO19xXxqvf2dGcaelK0SY9MPXuYNkQg"
+    "ref": "4FyBl6zAoxjPcoubK9OFN1Ofd_5yCaWprEdS4KiWiEcfzc4haHMm6t4zIN0MnMcrHZjNBWAXh8V2O3V1JLdVBQ"
 }

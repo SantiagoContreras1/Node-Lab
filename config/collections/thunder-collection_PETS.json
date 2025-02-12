@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "PETS",
     "collectionId": "2b723b83-14ff-4fa7-98c4-584a1df165f7",
-    "dateExported": "2025-02-06T06:24:05.362Z",
+    "dateExported": "2025-02-12T05:17:07.340Z",
     "version": "1.2",
     "folders": [],
     "requests": [
@@ -15,16 +15,16 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2025-02-05T19:55:33.760Z",
-            "modified": "2025-02-06T05:58:52.179Z",
+            "modified": "2025-02-12T05:03:06.969Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2E0NDM3NjU5MjYyMjQzYjQ3ZDUyYzQiLCJpYXQiOjE3Mzg4MTg0ODAsImV4cCI6MTczODgyMjA4MH0.20VZOJ5-YAswY9NQLBRsN0ZQMuiwPTGjzWCUDE14xbc"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FjMmIzZDNmMzkxOWI0NmQ1Y2RlZjYiLCJpYXQiOjE3MzkzMzY1MjUsImV4cCI6MTczOTM0MDEyNX0.3odva3ADvF55B3d9vayWKTB9uUR3rv726mLP6Klac0E"
                 }
             ],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"name\":\"Dug\",\n  \"description\":\"Golden\",\n  \"age\":32,\n  \"type\":\"El perrito de up\",\n  \"email\":\"postmalone@gmail.com\"\n}",
+                "raw": "{\n  \"name\":\"lil Jon\",\n  \"description\":\"Perrito enano\",\n  \"age\":32,\n  \"type\":\"Chihuahua\",\n  \"email\":\"mayen@gmail.com\"\n}",
                 "form": []
             }
         },
@@ -73,7 +73,131 @@
                     "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2E0NDM3NjU5MjYyMjQzYjQ3ZDUyYzQiLCJpYXQiOjE3Mzg4MjExODEsImV4cCI6MTczODgyNDc4MX0.hdrmM01V-9C2iRrar9_MKaHhsuirW0LDByeoE39Sjh4"
                 }
             ]
+        },
+        {
+            "_id": "8414517d-d089-4751-b5d9-cf0dcf1aeea5",
+            "colId": "2b723b83-14ff-4fa7-98c4-584a1df165f7",
+            "containerId": "",
+            "name": "UPDATE",
+            "url": "http://localhost:3000/adoptionSystem/v1/pets/update/",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2025-02-11T03:53:17.774Z",
+            "modified": "2025-02-11T03:57:20.963Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"2Chainz\",\n  \"description\":\"Pastor aleman\",\n  \"age\":32,\n  \"type\":\"El perrito Rapero\",\n  \"email\":\"ky@gmail.com\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "c5d3df06-c3cf-4aba-b7ff-672a62aab654",
+            "colId": "2b723b83-14ff-4fa7-98c4-584a1df165f7",
+            "containerId": "",
+            "name": "POST/dates",
+            "url": "http://localhost:3000/adoptionSystem/v1/dates/",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2025-02-11T06:22:24.149Z",
+            "modified": "2025-02-12T05:04:42.283Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FjMmIzZDNmMzkxOWI0NmQ1Y2RlZjYiLCJpYXQiOjE3MzkzMzY1MjUsImV4cCI6MTczOTM0MDEyNX0.3odva3ADvF55B3d9vayWKTB9uUR3rv726mLP6Klac0E"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"date\": \"2025-02-25\",\n    \"description\": \"Grooming programado\",\n    \"email\":\"mayen@gmail.com\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "38ea8d4e-78c6-426d-bfb1-7d3401041b1c",
+            "colId": "2b723b83-14ff-4fa7-98c4-584a1df165f7",
+            "containerId": "",
+            "name": "GETbyID/dates",
+            "url": "http://localhost:3000/adoptionSystem/v1/dates/forOne/67abe675a306acabbfa41b3f",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2025-02-12T00:09:04.300Z",
+            "modified": "2025-02-12T00:44:30.863Z",
+            "headers": [
+                {
+                    "name": "_id",
+                    "value": "67abe675a306acabbfa41b3f"
+                },
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FhZjkyMmYyMDY1YzNlZTgxOTgxNDQiLCJpYXQiOjE3MzkzMjEwNDcsImV4cCI6MTczOTMyNDY0N30.bbJ_Uo_BJqnFuj2_tky0s5d22nG4fgSqaswBG1UJ4jM"
+                }
+            ]
+        },
+        {
+            "_id": "725f438d-842f-4b73-8a08-d7078412b73f",
+            "colId": "2b723b83-14ff-4fa7-98c4-584a1df165f7",
+            "containerId": "",
+            "name": "GET/dates",
+            "url": "http://localhost:3000/adoptionSystem/v1/dates/",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2025-02-12T00:47:46.890Z",
+            "modified": "2025-02-12T00:48:03.625Z",
+            "headers": []
+        },
+        {
+            "_id": "cffe5532-38d4-4b2a-b1d4-91d7e889dd2d",
+            "colId": "2b723b83-14ff-4fa7-98c4-584a1df165f7",
+            "containerId": "",
+            "name": "DELETE/dates",
+            "url": "http://localhost:3000/adoptionSystem/v1/dates/delete/67ac2bea3f3919b46d5cdeff",
+            "method": "DELETE",
+            "sortNum": 90000,
+            "created": "2025-02-12T03:25:31.022Z",
+            "modified": "2025-02-12T05:07:26.431Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FjMmIzZDNmMzkxOWI0NmQ1Y2RlZjYiLCJpYXQiOjE3MzkzMzY3ODksImV4cCI6MTczOTM0MDM4OX0.qn77PhYhNxFq4IyohEJAT1OPf1osqEjwo_UvKXJdu4o"
+                },
+                {
+                    "name": "_id",
+                    "value": "67ac2bea3f3919b46d5cdeff"
+                }
+            ]
+        },
+        {
+            "_id": "013fbe65-74b8-4347-86f0-3a21decae4a5",
+            "colId": "2b723b83-14ff-4fa7-98c4-584a1df165f7",
+            "containerId": "",
+            "name": "UPDATE/dates",
+            "url": "http://localhost:3000/adoptionSystem/v1/dates/put/67ac2bea3f3919b46d5cdeff",
+            "method": "PUT",
+            "sortNum": 100000,
+            "created": "2025-02-12T04:34:54.214Z",
+            "modified": "2025-02-12T05:13:16.700Z",
+            "headers": [
+                {
+                    "name": "_id",
+                    "value": "67ac2bea3f3919b46d5cdeff"
+                },
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FjMmIzZDNmMzkxOWI0NmQ1Y2RlZjYiLCJpYXQiOjE3MzkzMzY3ODksImV4cCI6MTczOTM0MDM4OX0.qn77PhYhNxFq4IyohEJAT1OPf1osqEjwo_UvKXJdu4o"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"date\": \"2025-02-25\",\n    \"description\": \"Recorte de pelo programado\",\n    \"email\":\"mayen@gmail.com\"\n}",
+                "form": []
+            }
         }
     ],
-    "ref": "lMSQxX3eORDnFooAtW97E50RtQlMzPl_tJQpaFYBQHF3An-a9Kr2pY7-skRlEGxWVwH0oPktlJNL32gPDTx5Bg"
+    "ref": "lMSQxX3eORDnFooAtW97Exmt3dCSBC2azyixJymEpkotC1haqCP8wRMsJyWHGWCu47bsPZq_7D2067QTvYi3Ow"
 }

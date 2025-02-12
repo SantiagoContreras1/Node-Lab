@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "CRUD",
     "collectionId": "b76cf7d5-a372-4372-b5d8-c7c0e1be876b",
-    "dateExported": "2025-02-06T06:23:53.675Z",
+    "dateExported": "2025-02-12T05:16:52.972Z",
     "version": "1.2",
     "folders": [],
     "requests": [
@@ -58,7 +58,30 @@
             "created": "2025-02-05T19:09:03.310Z",
             "modified": "2025-02-05T19:10:33.607Z",
             "headers": []
+        },
+        {
+            "_id": "2a5ef3d9-e27a-411b-8b85-5329abfd0fa8",
+            "colId": "b76cf7d5-a372-4372-b5d8-c7c0e1be876b",
+            "containerId": "",
+            "name": "UPDATEPASSWORD",
+            "url": "http://localhost:3000/adoptionSystem/v1/users/updatePassword/67aac939225d7859c1d1b7fc",
+            "method": "PUT",
+            "sortNum": 60000,
+            "created": "2025-02-11T04:08:30.989Z",
+            "modified": "2025-02-11T05:56:30.777Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FhYzkzOTIyNWQ3ODU5YzFkMWI3ZmMiLCJpYXQiOjE3MzkyNDU5MTQsImV4cCI6MTczOTI0OTUxNH0.wXiC-MT2t6pARaC1pKnJC8gfjROZLrh1qV1OOuCDq2w.eyJ1aWQiOiI2N2FhYzkzOTIyNWQ3ODU5YzFkMWI3ZmMiLCJpYXQiOjE3MzkyNDU5MTQsImV4cCI6MTczOTI0OTUxNH0.wXiC-MT2t6pARaC1pKnJC8gfjROZLrh1qV1OOuCDq2w",
+                    "isDisabled": true
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"password\": \"123456789\"\n}",
+                "form": []
+            }
         }
     ],
-    "ref": "7z6I8OSYMWSTwHnYeEtILjKXPVVAq6AKea8o4FDXJ3_wRxJLQTx1K3_wvAa8EggItlXbhUIVTq-2CyDtBFd7wA"
+    "ref": "7z6I8OSYMWSTwHnYeEtILsInaarMZH7zn1wvs-TfCHekD4_rhhJe3MugzwoA_w6P51lSR2IYTWcCj_UzkhDW1g"
 }
